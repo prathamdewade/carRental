@@ -1,0 +1,76 @@
+<div class= " aa page-background">
+    <div class="container my-5">
+      <div class="row g-4">
+        <!-- Aside Services Section -->
+        <aside class="col-lg-4">
+          <div class="services-aside">
+            <h3>🚖 Cab Features</h3>
+            <ul>
+              <li><span>❄</span> AC Cab</li>
+              <li><span>🌬</span> Non-AC Cab</li>
+              <li><span>🚗</span> 4-Seater</li>
+              <li><span>🚙</span> 7-Seater SUV</li>
+              <li><span>🚘</span> Luxury Sedan</li>
+              <li><span>🚌</span> Tempo Traveller</li>
+            </ul>
+          </div>
+        </aside>
+  
+        <!-- Booking Form Section -->
+        <section class="col-lg-8">
+          <div class="booking-form">
+            <h2 class="text-teal mb-4">Book Your Ride</h2>
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+              </div>
+
+              <div class="mb-4">
+                <label class="form-label d-block">How would you like to get the car?</label>
+                <div class="d-flex flex-column flex-md-row gap-3">
+                  <div class="form-check ">
+                    <input class="form-check-input" type="radio" name="pickupOption" id="selfPickup" value="self" checked>
+                    <label class="form-check-label" for="selfPickup">
+                     {{' will pick it up'}} 
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pickupOption" id="homeDelivery" value="delivery">
+                    <label class="form-check-label" for="homeDelivery">
+                      {{'Deliver to my location'}}
+                    </label>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="mb-3">
+                <label for="pickup" class="form-label">Pickup Location</label>
+                <input type="text" id="pickup" class="form-control" placeholder="Enter pickup location" required>
+              </div>
+              <div class="mb-3">
+                <label for="drop" class="form-label">Drop Location</label>
+                <input type="text" id="drop" class="form-control" placeholder="Enter drop location" required>
+              </div>
+              <div class="mb-3">
+                <label for="date" class="form-label">Pickup Date</label>
+                <input type="date" id="date" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label for="cab-type" class="form-label">Cab Type</label>
+                <select id="cab-type" class="form-select">
+                  <option value="ac">AC Cab</option>
+                  <option value="non-ac">Non-AC Cab</option>
+                  <option value="suv">SUV</option>
+                  <option value="sedan">Luxury Sedan</option>
+                  <option value="tempo">Tempo Traveller</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-teal w-100">Confirm Booking</button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>

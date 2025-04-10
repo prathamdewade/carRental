@@ -1,0 +1,94 @@
+/* Container for the dashboard */
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    background: #f5f6fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    gap: 40px;
+  }
+  
+  /* Sidebar on the left */
+  .sidebar {
+    width: 220px;
+    background-color: #2d3436;
+    color: #fff;
+    padding: 25px 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 10px 15px;
+    margin-bottom: 12px;
+    background-color: #636e72;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+  }
+  
+  .sidebar ul li:hover {
+    background-color: #00cec9;
+  }
+  
+  /* Main content on the right */
+  .content {
+    flex: 1;
+    max-width: 600px;
+  }
+  
+  /* Cab details card */
+  .content > div {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .content h2 {
+    font-size: 1.8rem;
+    color: #2d3436;
+    margin-bottom: 15px;
+  }
+  
+  .content img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .content p {
+    font-size: 1rem;
+    margin: 8px 0;
+    color: #2f3542;
+  }
+  
+  .content p:last-child {
+    background-color: #ffeaa7;
+    color: #d35400;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    display: inline-block;
+  }
+  

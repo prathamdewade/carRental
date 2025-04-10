@@ -1,0 +1,50 @@
+/* Custom Navbar Styles */
+.navbar {
+    background-color: #1e272e; /* Dark Unique Color */
+    padding: 0.75rem 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar-brand img {
+    height: 35px;
+  }
+  
+  .navbar-brand span {
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #00d2d3 !important;
+  }
+  
+  .dropdown-menu {
+    background-color: #2f3640;
+  }
+  
+  .dropdown-menu .dropdown-item {
+    color: #dcdde1;
+    transition: background-color 0.3s;
+  }
+  
+  .dropdown-menu .dropdown-item:hover {
+    background-color: #00d2d3;
+    color: #fff;
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width: 768px) {
+    .navbar {
+      text-align: center;
+    }
+    .navbar-nav {
+      margin-top: 10px;
+    }
+  }
+ 

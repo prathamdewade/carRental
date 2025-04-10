@@ -1,0 +1,35 @@
+<!-- <p>user-index works!</p> -->
+ <!-- <p>userindex works!</p> -->
+ <!-- <p>dashbord works!</p> -->
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Cab Types</h3>
+      <ul>
+        <li (click)="selectCategory('AC Cab')">AC Cab</li>
+        <li (click)="selectCategory('Non-AC Cab')">Non-AC Cab</li>
+        <li (click)="selectCategory('4-Seater')">4-Seater</li>
+        <li (click)="selectCategory('7-Seater SUV')">7-Seater SUV</li>
+        <li (click)="selectCategory('Luxury Sedan')">Luxury Sedan</li>
+        <li (click)="selectCategory('Tempo Traveller')">Tempo Traveller</li>
+      </ul>
+    </aside>
+  
+    <!-- Main Content -->
+    <main class="content">
+      <div *ngIf="selectedCab">
+        <h2>{{ selectedCab.name }}</h2>
+        <img [src]="selectedCab.image" alt="{{ selectedCab.name }}" />
+        <p>Type: {{ selectedCab.type }}</p>
+        <p>Seats: {{ selectedCab.seats }}</p>
+        <p>Rent: ₹{{ selectedCab.rent }}/km</p>
+       
+       <div class="btn">
+        <button class="book-now-btn btn btn-primary"  routerLink="/booking">Book Now</button> </div> 
+      </div>
+
+      <div *ngIf="!selectedCab">
+        <p>Please select a cab category to see details.</p>
+      </div>
+    </main>
+  </div>
