@@ -8,7 +8,7 @@ import { RegistrationComponent } from './auth/registration/registration.componen
 import { ServicesComponent } from './component/services/services.component';
 import { BookingComponent } from './component/booking/booking.component';
 import { UserIndexComponent } from './component/user-index/user-index.component';
-import { loginAuthGuard } from './gaurd/login-auth.guard';
+
 
 const routes: Routes = [
   {
@@ -30,7 +30,7 @@ const routes: Routes = [
     path:'booking',component:BookingComponent
   },
   {
-    path:'user-index',component:UserIndexComponent , canActivate:[loginAuthGuard]
+    path:'user-index',component:UserIndexComponent 
   },
   {
     path: 'auth' ,loadChildren:()=>import('./auth/auth.module') .then(m=>m.AuthModule)

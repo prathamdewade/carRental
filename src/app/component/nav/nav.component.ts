@@ -6,18 +6,17 @@ import { UserApiService } from 'src/app/user-api.service';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent implements OnInit{
-    isLogin:any = false;
+export class NavComponent {
+    isLogin: boolean = false;
+    isVendor: boolean = false; // Set true if the logged-in user is a vendor
+    
      constructor(private service : UserApiService){
       
      }
-
-     async ngOnInit(){
-      this.isLogin=await localStorage.getItem("ISLOG");
-      console.log(this.isLogin);
-     }
+      
+    
      onLogOut(){
-        this.service.userLogOut();
         this.isLogin=false;
+        this.service.userLogOut();
      }
 }

@@ -1,76 +1,78 @@
-<div class="container mt-5">
-  <h2 class="text-center mb-4">Register</h2>
+<div class="bg-car">
+  <div class="container d-flex justify-content-center align-items-center flex-column register-card">
+    <h3 class="text-center mb-4">Register</h3>
 
-  <ul class="nav nav-tabs justify-content-center mb-4" id="userTab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="customer-tab" data-bs-toggle="tab" data-bs-target="#customerForm" type="button" role="tab">
-        Customer
-      </button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="vendor-tab" data-bs-toggle="tab" data-bs-target="#vendorForm" type="button" role="tab">
-        Vendor
-      </button>
-    </li>
-  </ul>
+    <ul class="nav nav-tabs justify-content-center mb-4" id="registerTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="customer-tab" data-bs-toggle="tab" data-bs-target="#customerForm" type="button" role="tab">
+          Customer
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="vendor-tab" data-bs-toggle="tab" data-bs-target="#vendorForm" type="button" role="tab">
+          Vendor
+        </button>
+      </li>
+    </ul>
 
-  <div class="tab-content" id="userTabContent">
-    <!-- Customer Form -->
-    <div class="tab-pane fade show active" id="customerForm" role="tabpanel">
-      <form>
-        <div class="mb-3">
-          <label class="form-label">Full Name</label>
-          <input type="text" class="form-control" placeholder="Enter your name" required>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Email</label>
-          <input type="email" class="form-control" placeholder="Enter your email" required>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Password</label>
-          <input type="password" class="form-control" placeholder="Enter password" required>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Phone Number</label>
-          <input type="text" class="form-control" placeholder="Enter phone number" required>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Address</label>
-          <textarea class="form-control" rows="2" placeholder="Enter address" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary w-100">Register as Customer</button>
-      </form>
-    </div>
+    <div class="tab-content w-100" id="registerTabContent">
+      <!-- Customer Registration -->
+      <div class="tab-pane fade show active" id="customerForm" role="tabpanel">
+        <form>
+          <div class="mb-3">
+            <label class="form-label text-white-custom">Full Name</label>
+            <input type="text" class="form-control input-white" placeholder="Enter your name" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-white-custom">Email</label>
+            <input type="email" class="form-control input-white" placeholder="Enter your email" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-white-custom">Password</label>
+            <input type="password" class="form-control input-white" placeholder="Enter password" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-white-custom">Phone Number</label>
+            <input type="text" class="form-control input-white" placeholder="Enter phone number" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-white-custom">Address</label>
+            <textarea class="form-control input-white" rows="2" placeholder="Enter address" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Register as Customer</button>
+        </form>
+      </div>
 
-    <!-- Vendor Form -->
-    <div class="tab-pane fade" id="vendorForm" role="tabpanel">
-      <form>
-        <div class="mb-3">
-          <label class="form-label">Owner Name</label>
-          <input type="text" class="form-control" placeholder="Enter your name" required>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Email</label>
-          <input type="email" class="form-control" placeholder="Enter your email" required>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Password</label>
-          <input type="password" class="form-control" placeholder="Enter password" required>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Phone Number</label>
-          <input type="text" class="form-control" placeholder="Enter phone number" required>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Address</label>
-          <textarea class="form-control" rows="2" placeholder="Enter address" required></textarea>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Agency Name</label>
-          <input type="text" class="form-control" placeholder="Enter agency name" required>
-        </div>
-        <button type="submit" class="btn btn-success w-100">Register as Vendor</button>
-      </form>
+      <!-- Vendor Registration -->
+      <div class="tab-pane fade" id="vendorForm" role="tabpanel">
+        <form>
+          <div class="mb-3">
+            <label class="form-label text-white-custom">Owner Name</label>
+            <input type="text" class="form-control input-white" placeholder="Enter your name" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-white-custom">Email</label>
+            <input type="email" class="form-control input-white" placeholder="Enter your email" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-white-custom">Password</label>
+            <input type="password" class="form-control input-white" placeholder="Enter password" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-white-custom">Phone Number</label>
+            <input type="text" class="form-control input-white" placeholder="Enter phone number" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-white-custom">Address</label>
+            <textarea class="form-control input-white" rows="2" placeholder="Enter address" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-white-custom">Agency Name</label>
+            <input type="text" class="form-control input-white" placeholder="Enter agency name" required>
+          </div>
+          <button type="submit" class="btn btn-success w-100">Register as Vendor</button>
+        </form>
+      </div>
     </div>
   </div>
 </div>

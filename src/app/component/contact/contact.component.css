@@ -1,37 +1,46 @@
 .contact-section {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    color: white;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contact-section .form-control {
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+.contact-section .form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+  border-color: #0d6efd;
+}
+
+.contact-section .btn {
+  padding: 10px;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+}
+
+.contact-section p {
+  font-size: 1.1rem;
+}
+
+.contact-section i {
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .contact-section h2 {
+    font-size: 2rem;
   }
-  
-  .contact-section h2,
-  .contact-section p,
-  .contact-section h5 {
-    color: white;
+
+  .contact-section p {
+    font-size: 1rem;
   }
-  
-  .contact-section .form-control {
-    background-color: rgba(255, 255, 255, 0.9);
-    border: none;
-    border-radius: 0.25rem;
-  }
-  
-  .contact-section .form-control::placeholder {
-    color: #666;
-  }
-  
-  .contact-section .form-group {
-    margin-bottom: 1.25rem;
-  }
-  
-  .contact-section .btn-primary {
-    background-color: #007bff;
-    border: none;
-  }
-  
-  .contact-section .btn-primary:hover {
-    background-color: #0056b3;
-  }
-  
+}

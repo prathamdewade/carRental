@@ -1,13 +1,12 @@
-.about-us-section h2 {
-    font-size: 2.5rem;
- 
-  }
-  
-  .about-us-section i {
-    transition: transform 0.3s ease;
-  }
-  
-  .about-us-section i:hover {
-    transform: scale(1.2);
-  }
-  
+.register-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.text-white-custom {
+  color: white !important;
+}

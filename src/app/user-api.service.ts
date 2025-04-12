@@ -19,7 +19,7 @@ export class UserApiService {
   }
   userLogOut(){
     userdata:undefined;
-    localStorage.setItem("ISLOG","false");  
+  
      this.router.navigate(["/auth"])
   }
 

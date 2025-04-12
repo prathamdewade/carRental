@@ -1,45 +1,65 @@
 <!-- Navbar -->
 <nav class="mb-4 navbar navbar-expand-lg navbar-dark unique-color-dark">
-    <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="https://cdn-icons-png.flaticon.com/512/743/743007.png" alt="Car Rental Logo" height="30" class="mr-2">
-      <span class="ml-2 font-weight-bold"> {{'Farrari ki Sawari'}}</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
-      aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#"><i class="fa fa-car"></i> Bookings <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"routerLink="/partner"><i class="fa fa-users"></i> Partners</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"routerLink="/services"><i class="fa fa-users"></i> services</a>
-        </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link"routerLink="/user-index"><i class="fa fa-users"></i> User-Index</a>
-        </li> -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink-4" role="button"
-             data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa fa-user-circle"></i> Account
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink-4">
-            <div *ngIf="isLogin">
+  <a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="https://cdn-icons-png.flaticon.com/512/743/743007.png" alt="Car Rental Logo" height="30" class="mr-2">
+    <span class="ml-2 font-weight-bold">{{ 'Farrari ki Sawari' }}</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+    aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+
+    <!-- Customer Nav (untouched) -->
+    <ul class="navbar-nav ml-auto" *ngIf="!isVendor">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><i class="fa fa-car"></i> Bookings <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/partner"><i class="fa fa-users"></i> Partners</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/services"><i class="fa fa-users"></i> Services</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink-4" role="button"
+           data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa fa-user-circle"></i> Account
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink-4">
+          <div *ngIf="isLogin">
             <li><a class="dropdown-item" href="/auth/profile">My Profile</a></li>
-            <li><button class="dropdown-item" (click)="onLogOut()" >Logout</button></li>
-            </div>
-            <!--  -->
-            <div *ngIf="!isLogin">
+            <li><button class="dropdown-item" (click)="onLogOut()">Logout</button></li>
+          </div>
+          <div *ngIf="!isLogin">
             <li><a class="dropdown-item" routerLink="/auth/">Login</a></li>
           </div>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <!-- /.Navbar -->
+        </ul>
+      </li>
+    </ul>
+
+    <!-- Vendor Nav (separate, only shown if isVendor is true) -->
+    <ul class="navbar-nav ml-auto" *ngIf="isVendor">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/vender/add"><i class="fa fa-plus-circle"></i> Add</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/vender/view"><i class="fa fa-database"></i> All Data</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="vendorDropdown" role="button"
+           data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa fa-user-circle"></i> Account
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="vendorDropdown">
+          <li><a class="dropdown-item" href="/auth/profile">My Profile</a></li>
+          <li><button class="dropdown-item" (click)="onLogOut()">Logout</button></li>
+        </ul>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+<!-- /.Navbar -->

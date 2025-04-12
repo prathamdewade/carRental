@@ -7,21 +7,16 @@ import { UserApiService } from 'src/app/user-api.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent{
 user ={
   "email": "",
   "password": ""
 }
-isLog= false;
-   constructor(private service : UserApiService,private router : Router){}
-  islogin:any
-   ngOnInit(){
-       this.islogin = false;
-   }
 
+   constructor(private service : UserApiService,private router : Router){}
+ 
   onLogin(){
-   this.isLog=true;
-   localStorage.setItem("ISLOG", this.isLog.toString());
+   
    console.log(this.user);
     
    this.service.userLogin(this.user).subscribe(
