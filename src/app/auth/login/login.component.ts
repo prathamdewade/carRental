@@ -13,7 +13,7 @@ user ={
   "email": "",
   "password": ""
 }
-
+//her i am user object use both means vender /user login 
 
    constructor(private service : UserApiService,
     private router : Router,
