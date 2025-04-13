@@ -18,32 +18,33 @@
     <div class="tab-content w-100" id="loginTabContent">
       <!-- Customer Login -->
       <div class="tab-pane fade show active" id="customerLogin" role="tabpanel">
-        <form>
+        <form (ngSubmit)="onUserLogin()" #data="ngForm">
           <div class="mb-3">
             <label class="form-label text-white-custom">Email address</label>
-            <input type="email" class="form-control input-white" placeholder="Enter email" required>
+            <input type="email" class="form-control input-white" name="email" [(ngModel)]="user.email" placeholder="Enter email" required>
           </div>
           <div class="mb-3">
             <label class="form-label text-white-custom">Password</label>
-            <input type="password" class="form-control input-white" placeholder="Password" required>
+            <input type="password" class="form-control input-white" [(ngModel)]="user.password" name="pasword" placeholder="Password" required>
           </div>
           <button type="submit" class="btn btn-primary w-100">Login as Customer</button>
           <div class="mt-3 text-center">
-            <small class="text-white-custom">Don't have an account? <a routerLink="/auth/register" style="color: chocolate;">Register</a></small>
+            <small class="text-white-custom">Don't have an account? 
+              <a routerLink="/auth/register" style="color: chocolate;">Register</a></small>
           </div>
         </form>
       </div>
 
       <!-- Vendor Login -->
       <div class="tab-pane fade" id="vendorLogin" role="tabpanel">
-        <form>
+        <form (ngSubmit)="onvenderLogin()" #data="ngForm">
           <div class="mb-3">
             <label class="form-label text-white-custom">Email address</label>
-            <input type="email" class="form-control input-white" placeholder="Enter email" required>
+            <input type="email" class="form-control input-white" placeholder="Enter email"  [(ngModel)]="user.email" name="email"required>
           </div>
           <div class="mb-3">
             <label class="form-label text-white-custom">Password</label>
-            <input type="password" class="form-control input-white" placeholder="Password" required>
+            <input type="password" class="form-control input-white" placeholder="Password"  [(ngModel)]="user.password" name="pasword" required>
           </div>
           <button type="submit" class="btn btn-success w-100">Login as Vendor</button>
           <div class="mt-3 text-center">

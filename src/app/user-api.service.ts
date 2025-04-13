@@ -12,10 +12,10 @@ export class UserApiService {
   }
    
   userRegister(user : any){
-   return this.http.post('https://localhost:7049/api/User/register',user);
+   return this.http.post('https://localhost:7049/api/User/register',user,{ responseType: 'text'});
   }
   userLogin(user : any){
-    return this.http.post('https://localhost:7049/api/User/login',user);
+    return this.http.post('https://localhost:7049/api/User/login',user,{ responseType: 'text'});
   }
   userLogOut(){
     userdata:undefined;

@@ -18,26 +18,29 @@
     <div class="tab-content w-100" id="registerTabContent">
       <!-- Customer Registration -->
       <div class="tab-pane fade show active" id="customerForm" role="tabpanel">
-        <form>
+        <form (ngSubmit)="onUserRegister()" #data="ngForm">
           <div class="mb-3">
             <label class="form-label text-white-custom">Full Name</label>
-            <input type="text" class="form-control input-white" placeholder="Enter your name" required>
+            <input type="text" class="form-control input-white" name ="userName" 
+            [(ngModel)]="user.userName" placeholder="Enter your name" required>
           </div>
           <div class="mb-3">
             <label class="form-label text-white-custom">Email</label>
-            <input type="email" class="form-control input-white" placeholder="Enter your email" required>
+            <input type="email" class="form-control input-white" placeholder="Enter your email" 
+            name ="email"   [(ngModel)]="user.email" required>
           </div>
           <div class="mb-3">
             <label class="form-label text-white-custom">Password</label>
-            <input type="password" class="form-control input-white" placeholder="Enter password" required>
+            <input type="password" class="form-control input-white" placeholder="Enter password" 
+            name ="pasword"  [(ngModel)]="user.password"  required>
           </div>
           <div class="mb-3">
             <label class="form-label text-white-custom">Phone Number</label>
-            <input type="text" class="form-control input-white" placeholder="Enter phone number" required>
+            <input type="text" class="form-control input-white" placeholder="Enter phone number"    name ="phoneNumber"   [(ngModel)]="user.phoneNumber"   required>
           </div>
           <div class="mb-3">
             <label class="form-label text-white-custom">Address</label>
-            <textarea class="form-control input-white" rows="2" placeholder="Enter address" required></textarea>
+            <textarea class="form-control input-white" rows="2" placeholder="Enter address"   name ="address"   [(ngModel)]="user.address" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary w-100">Register as Customer</button>
         </form>
@@ -45,30 +48,30 @@
 
       <!-- Vendor Registration -->
       <div class="tab-pane fade" id="vendorForm" role="tabpanel">
-        <form>
+        <form (ngSubmit)="onVenderRegister()" #data="ngForm">
           <div class="mb-3">
             <label class="form-label text-white-custom">Owner Name</label>
-            <input type="text" class="form-control input-white" placeholder="Enter your name" required>
+            <input type="text" class="form-control input-white" placeholder="Enter your name"  name ="ownerName"   [(ngModel)]="vender.ownerName" required>
           </div>
           <div class="mb-3">
             <label class="form-label text-white-custom">Email</label>
-            <input type="email" class="form-control input-white" placeholder="Enter your email" required>
+            <input type="email" class="form-control input-white" placeholder="Enter your email"  name ="email"   [(ngModel)]="vender.email"  required>
           </div>
           <div class="mb-3">
             <label class="form-label text-white-custom">Password</label>
-            <input type="password" class="form-control input-white" placeholder="Enter password" required>
+            <input type="password" class="form-control input-white" placeholder="Enter password"  name ="password"   [(ngModel)]="vender.password"  required>
           </div>
           <div class="mb-3">
             <label class="form-label text-white-custom">Phone Number</label>
-            <input type="text" class="form-control input-white" placeholder="Enter phone number" required>
+            <input type="text" class="form-control input-white" placeholder="Enter phone number" name ="phoneNumber"   [(ngModel)]="vender.phoneNumber" required>
           </div>
           <div class="mb-3">
             <label class="form-label text-white-custom">Address</label>
-            <textarea class="form-control input-white" rows="2" placeholder="Enter address" required></textarea>
+            <textarea class="form-control input-white" rows="2" placeholder="Enter address" name ="address"   [(ngModel)]="vender.address" required></textarea>
           </div>
           <div class="mb-3">
             <label class="form-label text-white-custom">Agency Name</label>
-            <input type="text" class="form-control input-white" placeholder="Enter agency name" required>
+            <input type="text" class="form-control input-white" placeholder="Enter agency name"name ="agencyName"   [(ngModel)]="vender.agencyName" required>
           </div>
           <button type="submit" class="btn btn-success w-100">Register as Vendor</button>
         </form>
