@@ -7,18 +7,18 @@ import { Router } from '@angular/router';
 })
 export class VenderapiService {
 
-  constructor(private http:HttpClient, private router : Router) { 
-      
-   }
-   onRegister(vendor : any){
-    return  this.http.post('https://localhost:7049/api/Vendor/register', vendor, {
+  constructor(private http: HttpClient, private router: Router) {
+
+  }
+  onRegister(vendor: any) {
+    return this.http.post('https://localhost:7049/api/Vendor/register', vendor, {
       responseType: 'text'
     });
-   }
+  }
 
-   onlogin(vendor :any){
-    return this.http.post('https://localhost:7049/api/Vendor/login',vendor,{
-         responseType: 'text'
+  onlogin(vendor: any) {
+    return this.http.post('https://localhost:7049/api/Vendor/login', vendor, {
+      responseType: 'text'
     })
-   }
+  }
 }

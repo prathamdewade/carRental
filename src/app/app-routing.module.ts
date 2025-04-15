@@ -8,12 +8,14 @@ import { RegistrationComponent } from './auth/registration/registration.componen
 import { ServicesComponent } from './component/services/services.component';
 import { BookingComponent } from './component/booking/booking.component';
 import { UserIndexComponent } from './component/user-index/user-index.component';
+import { loginAuthGuard } from './gaurd/login-auth.guard';
 
 
 const routes: Routes = [
   {
     path:'',component:HomeComponent
   },
+  
   {
     path:'about',component:AboutComponent
   },

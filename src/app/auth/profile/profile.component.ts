@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
+  loggedInUser:any;
+
+  constructor() {
+    const sessData = JSON.parse(sessionStorage.getItem('loggedInUser') || '{}');
+    this.loggedInUser = {...sessData, ownerName: ''};
+
+    console.log(sessData)
+  }
+
 
 }
+

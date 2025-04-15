@@ -1,14 +1,20 @@
-import { CanActivateFn } from '@angular/router';
+import { inject, Inject } from '@angular/core';
+import { CanActivateFn, Router } from '@angular/router';
 
 export const loginAuthGuard: CanActivateFn = (route, state) => {
   
-  let isLog= localStorage.getItem("ISLOG");
-  if(isLog){
-    console.log("Hiii if"+isLog);
+  const router=inject(Router);
+
+  let loggedInUser= sessionStorage.getItem("loggedInUser");
+  if(loggedInUser!=null){
+    console.log("Hiii if");
     
     return true;
   }else{
-    console.log("Hiii else"+isLog);
+    console.log("hiii");
+     console.log(loggedInUser);
+     
+     router.navigate(["login"])
     return false;
   }
  

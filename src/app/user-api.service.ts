@@ -17,6 +17,9 @@ export class UserApiService {
   userLogin(user : any){
     return this.http.post('https://localhost:7049/api/User/login',user,{ responseType: 'text'});
   }
+  getProfileData(id:any){
+    
+  }
   userLogOut(){
     userdata:undefined;
   

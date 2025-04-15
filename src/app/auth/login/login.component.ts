@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavComponent } from 'src/app/component/nav/nav.component';
 import { UserApiService } from 'src/app/user-api.service';
 import { VenderapiService } from 'src/app/venderapi.service';
 
@@ -22,11 +23,13 @@ user ={
    ){}
  
    onUserLogin() {
-    console.log(this.user);
-  
     this.service.userLogin(this.user).subscribe({
       next: (res) => {
         console.log('Login successful:', res);
+        sessionStorage.setItem("userRole", "user");
+        sessionStorage.setItem('loggedInUser', res);
+        
+      //  sessionStorage.setItem('ISLOG', JSON.stringify(true));
         this.router.navigate(['/user-index']);
       },
       error: (err) => {
@@ -48,7 +51,10 @@ user ={
      console.log(this.user);
      this.v_service.onlogin(this.user).subscribe({
       next:(res)=>{
-        this.router.navigate(['/vender/view']);
+        console.log(res);
+        sessionStorage.setItem("userRole", "vender");
+        sessionStorage.setItem('loggedInVender', res);
+         this.router.navigate(['/vender/view']);
       },
       error:(err)=>{
           console.log("Login Failed: ",err);
