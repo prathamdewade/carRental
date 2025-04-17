@@ -38,6 +38,8 @@ export class RegistrationComponent {
     this.service.userRegister(this.user).subscribe({
       next: (res) => {
         console.log('Registered:', res);
+        sessionStorage.setItem("userRole", "user");
+        sessionStorage.setItem('loggedInUser', res);
         this.router.navigate(['/user-index']);
       },
       error: (err) => {
@@ -57,6 +59,9 @@ export class RegistrationComponent {
     this.v_service.onRegister(this.vender).subscribe({
       next: (res) => {
         console.log('Registered:', res);
+        sessionStorage.setItem("userRole", "vender");
+        sessionStorage.setItem('loggedInVender', res);
+
         this.router.navigate(['/vender/view']);
       },
       error: (err) => {
