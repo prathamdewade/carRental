@@ -21,4 +21,7 @@ export class VenderapiService {
       responseType: 'text'
     })
   }
+
+  onregisterproduct(product: any) {
+  }
 }
