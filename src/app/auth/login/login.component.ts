@@ -26,8 +26,17 @@ user ={
     this.service.userLogin(this.user).subscribe({
       next: (res) => {
         console.log('Login successful:', res);
+      const start=  res.indexOf('{')
+      const last=  res.lastIndexOf('}')
+       const jsonString=  res.substring(start,last+1);
+      const user= JSON.parse(jsonString)
+
+      
         sessionStorage.setItem("userRole", "user");
-        sessionStorage.setItem('loggedInUser', res);
+        sessionStorage.setItem('loggedInUser', JSON.stringify(user));
+        sessionStorage.setItem("id",user.id.toString());
+        const data=sessionStorage.getItem('loggedInUser');
+ 
         
       //  sessionStorage.setItem('ISLOG', JSON.stringify(true));
         this.router.navigate(['/user-index']);
@@ -51,9 +60,23 @@ user ={
      console.log(this.user);
      this.v_service.onlogin(this.user).subscribe({
       next:(res)=>{
-        console.log(res);
+
+
+        const start=  res.indexOf('{')
+        const last=  res.lastIndexOf('}')
+         const sub=  res.substring(start,last+1);
+        const vendor= JSON.parse(sub)
+
+       console.log(sub);
+  
+         
         sessionStorage.setItem("userRole", "vender");
-        sessionStorage.setItem('loggedInVender', res);
+        sessionStorage.setItem('loggedInUser', JSON.stringify(vendor));
+        sessionStorage.setItem("id",vendor.vendorId.toString());
+
+        console.log("Login successful "+res);
+        // sessionStorage.setItem("userRole", "vender");
+        // sessionStorage.setItem('loggedInVender', res);
          this.router.navigate(['/vender/view']);
       },
       error:(err)=>{

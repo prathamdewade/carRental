@@ -19,38 +19,21 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr *ngFor="let car of v_cars.cars">
               <td>
-                <img src="https://via.placeholder.com/100x60" alt="Car Image" class="img-thumbnail">
+                <img [src]="car.image || 'https://via.placeholder.com/100x60'" alt="Car Image" class="img-thumbnail" width="100" height="60">
               </td>
-              <td>Honda City</td>
-              <td>MH12AB1234</td>
-              <td>2020</td>
-              <td>Fast Wheels Agency</td>
-              <td>2019</td>
-              <td>5</td>
-              <td>AC</td>
-              <td>Comfortable family sedan</td>
+              <td>{{ car.carName }}</td>
+              <td>{{ car.carNumber }}</td>
+              <td>{{ car.carPassing }}</td>
+              <td>{{ car.agencyName }}</td>
+              <td>{{ car.purchaseYear }}</td>
+              <td>{{ car.seaters }}</td>
+              <td>{{ car.acType }}</td>
+              <td>{{ car.description }}</td>
               <td>
-                <button class="btn btn-warning btn-sm me-2">Edit</button>
-                <button class="btn btn-danger btn-sm">Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img src="https://via.placeholder.com/100x60" alt="Car Image" class="img-thumbnail">
-              </td>
-              <td>Swift Dzire</td>
-              <td>DL8CAF6789</td>
-              <td>2018</td>
-              <td>DriveEasy Rentals</td>
-              <td>2017</td>
-              <td>4</td>
-              <td>Non-AC</td>
-              <td>Compact and fuel-efficient</td>
-              <td>
-                <button class="btn btn-warning btn-sm me-2">Edit</button>
-                <button class="btn btn-danger btn-sm">Delete</button>
+                <button class="btn btn-warning btn-sm me-2" (click)="onEdit(car)">Edit</button>
+                <button class="btn btn-danger btn-sm" (click)="onDelete(car)">Delete</button>
               </td>
             </tr>
           </tbody>

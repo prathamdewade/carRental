@@ -21,6 +21,9 @@ export class VenderapiService {
       responseType: 'text'
     })
   }
+  getAllCarDataByVenderId(id :any){
+    return this.http.get('https://localhost:7049/api/Car/get-car-vender-id/'+id)
+  }
 
   onregisterproduct(product: any) {
   }
