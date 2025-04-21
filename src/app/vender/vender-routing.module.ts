@@ -6,7 +6,7 @@ import { ViewCarComponent } from './view-car/view-car.component';
 
 const routes: Routes = [
   {path:'add',component:CarUploadComponent},
-  {path:'edit',component:EditCarComponent},
+  { path: 'edit/:id', component: EditCarComponent },
   {path:'view',component:ViewCarComponent}
 
 ];

@@ -15,7 +15,17 @@ export class VenderapiService {
       responseType: 'text'
     });
   }
+  getCarById(id: any) {
 
+    return this.http.get('https://localhost:7049/api/Car/'+ id);
+  }
+  updateCar(id :any,car: any) { 
+    console.log(car)
+    return this.http.put('https://localhost:7049/api/Car/update/' + id, car, {
+      responseType: 'text'
+    });
+
+  }
   onlogin(vendor: any) {
     return this.http.post('https://localhost:7049/api/Vendor/login', vendor, {
       responseType: 'text'

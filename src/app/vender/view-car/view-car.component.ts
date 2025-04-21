@@ -11,7 +11,8 @@ export class ViewCarComponent {
   v_cars = {
     "cars": [
       {
-        "image": "",
+        "carId": "",
+        "carImagePath": "",
         "carName": "",
         "carNumber": "",
         "carPassing": "",
@@ -19,7 +20,8 @@ export class ViewCarComponent {
         "purchaseYear": "",
         "seaters": "",
         "acType": "",
-        "description": ""
+        "description": "",
+        "vendorId" :""
       }
     ]
   }
@@ -28,8 +30,9 @@ export class ViewCarComponent {
     if (this.id) {
       this.service.getAllCarDataByVenderId(this.id).subscribe((res: any) => {
         console.log(res);
-        
         this.v_cars.cars = res; // assuming `res` is an array of cars
+        console.log(this.v_cars.cars);
+        
       });
     }
   }

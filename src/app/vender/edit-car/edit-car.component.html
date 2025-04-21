@@ -2,57 +2,58 @@
   <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh; z-index: 2; position: relative;">
     <div class="register-card text-white-custom">
       <h4 class="text-center mb-4">Edit Car Details</h4>
-      <form>
+      <form (ngSubmit)="updateCar()" #dataForm="ngForm" enctype="multipart/form-data">
+        
         <div class="mb-3">
           <label for="carName" class="form-label">Car Name</label>
-          <input type="text" id="carName" class="form-control" value="Toyota Innova" required>
+          <input type="text" id="carName" name="carName" class="form-control" [(ngModel)]="car.carName" required>
         </div>
 
         <div class="mb-3">
           <label for="carNo" class="form-label">Car Number</label>
-          <input type="text" id="carNo" class="form-control" value="MH12AB1234" required>
+          <input type="text" id="carNo" name="carNo" class="form-control" [(ngModel)]="car.carNumber" required>
         </div>
 
         <div class="mb-3">
           <label for="carPassing" class="form-label">Car Passing</label>
-          <input type="text" id="carPassing" class="form-control" value="Pune RTO" required>
+          <input type="text" id="carPassing" name="carPassing" class="form-control" [(ngModel)]="car.carPassing" required>
         </div>
 
         <div class="mb-3">
           <label for="agencyName" class="form-label">Travel Agency Name</label>
-          <input type="text" id="agencyName" class="form-control" value="City Travels" required>
+          <input type="text" id="agencyName" name="agencyName" class="form-control" [(ngModel)]="car.agencyName" required>
         </div>
 
         <div class="mb-3">
           <label for="purchaseYear" class="form-label">Purchase Year</label>
-          <input type="number" id="purchaseYear" class="form-control" value="2022" required>
+          <input type="number" id="purchaseYear" name="purchaseYear" class="form-control" [(ngModel)]="car.purchaseYear" required>
         </div>
 
         <div class="mb-3">
           <label for="seaters" class="form-label">Number of Seaters</label>
-          <input type="number" id="seaters" class="form-control" value="7" required>
+          <input type="number" id="seaters" name="seaters" class="form-control" [(ngModel)]="car.seaters" required>
         </div>
 
         <div class="mb-3">
           <label class="form-label d-block">AC/Non-AC</label>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="ac" name="acType" value="AC" checked>
+            <input class="form-check-input" type="radio" id="ac" name="acType" [(ngModel)]="car.acType" value="AC">
             <label class="form-check-label" for="ac">AC</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="nonAc" name="acType" value="Non-AC">
+            <input class="form-check-input" type="radio" id="nonAc" name="acType" [(ngModel)]="car.acType" value="Non-AC">
             <label class="form-check-label" for="nonAc">Non-AC</label>
           </div>
         </div>
 
         <div class="mb-3">
           <label for="description" class="form-label">Car Description</label>
-          <textarea id="description" class="form-control" rows="3">Spacious and comfortable for long trips.</textarea>
+          <textarea id="description" name="description" class="form-control" rows="3" [(ngModel)]="car.description"></textarea>
         </div>
 
         <div class="mb-3">
           <label for="carImage" class="form-label">Change Car Image</label>
-          <input type="file" class="form-control" id="carImage" accept="image/*">
+          <input type="file" class="form-control" id="carImage" name="carImage" (change)="onImageSelected($event)" accept="image/*">
         </div>
 
         <button type="submit" class="btn btn-success w-100">Update Car</button>
