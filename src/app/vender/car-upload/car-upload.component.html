@@ -2,57 +2,58 @@
   <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh; z-index: 2; position: relative;">
     <div class="register-card text-white-custom">
       <h4 class="text-center mb-4">Add Car Details</h4>
-      <form>
+      <form (ngSubmit)="addCar()" #data="ngForm">
+        
         <div class="mb-3">
           <label for="carName" class="form-label">Car Name</label>
-          <input type="text" id="carName" class="form-control" placeholder="Enter car name" required>
+          <input type="text" id="carName" class="form-control" placeholder="Enter car name" name="CarName" [(ngModel)]="car.CarName" required>
         </div>
 
         <div class="mb-3">
           <label for="carNo" class="form-label">Car Number</label>
-          <input type="text" id="carNo" class="form-control" placeholder="Enter car number" required>
+          <input type="text" id="carNo" class="form-control" placeholder="Enter car number" name="CarNumber" [(ngModel)]="car.CarNumber" required>
         </div>
 
         <div class="mb-3">
           <label for="carPassing" class="form-label">Car Passing</label>
-          <input type="text" id="carPassing" class="form-control" placeholder="Enter car passing info" required>
+          <input type="text" id="carPassing" class="form-control" placeholder="Enter car passing info" name="CarPassing" [(ngModel)]="car.CarPassing" required>
         </div>
 
         <div class="mb-3">
           <label for="agencyName" class="form-label">Travel Agency Name</label>
-          <input type="text" id="agencyName" class="form-control" placeholder="Enter agency name" required>
+          <input type="text" id="agencyName" class="form-control" placeholder="Enter agency name" name="AgencyName" [(ngModel)]="car.AgencyName" required>
         </div>
 
         <div class="mb-3">
           <label for="purchaseYear" class="form-label">Purchase Year</label>
-          <input type="number" id="purchaseYear" class="form-control" placeholder="Enter purchase year" required>
+          <input type="number" id="purchaseYear" class="form-control" placeholder="Enter purchase year" name="PurchaseYear" [(ngModel)]="car.PurchaseYear" required>
         </div>
 
         <div class="mb-3">
           <label for="seaters" class="form-label">Number of Seaters</label>
-          <input type="number" id="seaters" class="form-control" placeholder="Enter seaters" required>
+          <input type="number" id="seaters" class="form-control" placeholder="Enter seaters" name="Seaters" [(ngModel)]="car.Seaters" required>
         </div>
 
         <div class="mb-3">
           <label class="form-label d-block">AC/Non-AC</label>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="ac" name="acType" value="AC" required>
+            <input class="form-check-input" type="radio" id="ac" name="AcType" value="AC" [(ngModel)]="car.AcType" required>
             <label class="form-check-label" for="ac">AC</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="nonAc" name="acType" value="Non-AC" required>
+            <input class="form-check-input" type="radio" id="nonAc" name="AcType" value="Non-AC" [(ngModel)]="car.AcType" required>
             <label class="form-check-label" for="nonAc">Non-AC</label>
           </div>
         </div>
 
         <div class="mb-3">
           <label for="description" class="form-label">Car Description</label>
-          <textarea id="description" class="form-control" rows="3" placeholder="Enter car description"></textarea>
+          <textarea id="description" name="Description" [(ngModel)]="car.Description" class="form-control" rows="3" placeholder="Enter car description"></textarea>
         </div>
 
         <div class="mb-3">
           <label for="carImage" class="form-label">Upload Car Image</label>
-          <input type="file" class="form-control" id="carImage" accept="image/*">
+          <input type="file" class="form-control" id="carImage" accept="image/*" (change)="onImageChange($event)">
         </div>
 
         <button type="submit" class="btn btn-primary w-100">Submit</button>

@@ -10,16 +10,14 @@ export class VenderapiService {
   constructor(private http: HttpClient, private router: Router) {
 
   }
-  onRegister(vendor: any) {
-    return this.http.post('https://localhost:7049/api/Vendor/register', vendor, {
-      responseType: 'text'
-    });
+  onRegister(vender: any) {
+    return this.http.post('https://localhost:7049/api/Vendor/register',vender, {responseType: 'text'});
   }
   getCarById(id: any) {
 
-    return this.http.get('https://localhost:7049/api/Car/'+ id);
+    return this.http.get('https://localhost:7049/api/Car/' +id);
   }
-  updateCar(id :any,car: any) { 
+  updateCar(id: any, car: any) {
     console.log(car)
     return this.http.put('https://localhost:7049/api/Car/update/' + id, car, {
       responseType: 'text'
@@ -31,10 +29,21 @@ export class VenderapiService {
       responseType: 'text'
     })
   }
-  getAllCarDataByVenderId(id :any){
-    return this.http.get('https://localhost:7049/api/Car/get-car-vender-id/'+id)
-  }
+  getAllCarDataByVenderId(id: any) {
+    console.log(id);
 
-  onregisterproduct(product: any) {
+    return this.http.get('https://localhost:7049/api/Car/vendor/' + id)
+  }
+  
+  addCar(CarDtos: any) {
+    console.log(CarDtos);
+    
+    return this.http.post('https://localhost:7049/api/Car/add-car', CarDtos, { responseType: 'text' })
+  }
+  getAllVenders(){
+    return this.http.get('https://localhost:7049/api/Vendor/all');
+  }
+  getVendor(id:any){
+     return this.http.get('https://localhost:7049/api/Vendor/' +id)
   }
 }

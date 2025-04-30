@@ -9,37 +9,23 @@ import { ServicesComponent } from './component/services/services.component';
 import { BookingComponent } from './component/booking/booking.component';
 import { UserIndexComponent } from './component/user-index/user-index.component';
 import { loginAuthGuard } from './gaurd/login-auth.guard';
+import { CarDataComponent } from './component/car-data/car-data.component';
+import { BookingConfirmationComponent } from './component/booking-confirmation/booking-confirmation.component';
 
 
 const routes: Routes = [
-  {
-    path:'',component:HomeComponent
-  },
-  
-  {
-    path:'about',component:AboutComponent
-  },
-  {
-    path:'contact',component:ContactComponent
-  },
-  {
-    path:'partner',component:PartnerComponent
-  },
-  {
-    path:'services',component:ServicesComponent
-  },
-  {
-    path:'booking',component:BookingComponent
-  },
-  {
-    path:'user-index',component:UserIndexComponent 
-  },
-  {
-    path: 'auth' ,loadChildren:()=>import('./auth/auth.module') .then(m=>m.AuthModule)
-  },
-  {
-    path: 'vender' ,loadChildren:()=>import('./vender/vender.module') .then(m=>m.VenderModule)
-  }
+  {path:'',component:HomeComponent},
+  {path:'about',component:AboutComponent },
+  {path:'contact',component:ContactComponent},
+  {path:'partner',component:PartnerComponent},
+  {path:'services',component:ServicesComponent},
+  {path: 'booking/:id', component:BookingComponent},
+  {path:'user-index',component:UserIndexComponent },
+  {path: 'car-data/:id', component:CarDataComponent},
+  {path:'booking',component:BookingComponent},
+  {path:'booking-conformation',component:BookingConfirmationComponent},
+  {path: 'auth' ,loadChildren:()=>import('./auth/auth.module') .then(m=>m.AuthModule) },
+  {path: 'vender' ,loadChildren:()=>import('./vender/vender.module') .then(m=>m.VenderModule) },
  
 ];
 

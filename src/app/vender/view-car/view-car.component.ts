@@ -27,14 +27,26 @@ export class ViewCarComponent {
   }
   constructor(private service: VenderapiService) {
     this.id = sessionStorage.getItem("id");
+    console.log(this.id);
+    
     if (this.id) {
       this.service.getAllCarDataByVenderId(this.id).subscribe((res: any) => {
-        console.log(res);
-        this.v_cars.cars = res; // assuming `res` is an array of cars
+        if (Array.isArray(res)) {
+          this.v_cars.cars = res;
+         console.log();
+         
+          console.log(res);
+          
+        } else {
+          this.v_cars.cars = [res];
+        }
         console.log(this.v_cars.cars);
-        
       });
     }
+    console.log(this.v_cars);
+    
+    
+    
   }
 
 

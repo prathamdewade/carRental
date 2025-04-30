@@ -13,7 +13,9 @@ import { ServicesComponent } from './component/services/services.component';
 import { BookingComponent } from './component/booking/booking.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import  {HttpClientModule} from '@angular/common/http';
-import { UserIndexComponent } from './component/user-index/user-index.component'
+import { UserIndexComponent } from './component/user-index/user-index.component';
+import { CarDataComponent } from './component/car-data/car-data.component';
+import { BookingConfirmationComponent } from './component/booking-confirmation/booking-confirmation.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,10 @@ import { UserIndexComponent } from './component/user-index/user-index.component'
     PartnerComponent,
     ServicesComponent,
     BookingComponent,
-    UserIndexComponent
+    UserIndexComponent,
+    CarDataComponent,
+    BookingConfirmationComponent,
+  
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,36 @@
+<div class="bg-car">
+    <div class="car-details-container">
+      <h2 class="text-white-custom">Vendor - Cars List</h2>
+  
+      <div class="cars-container">
+        <!-- Single Car Card Start -->
+        <div class="vendor-card" *ngFor="let car of cardata.car"
+        >
+          <div class="car-image">
+            <img class="vendor-img" [src]="'https://localhost:7049/' + car.carImagePath" />
+
+          </div>
+  
+          <div class="car-info text-white-custom">
+            <p><strong>Car Name:</strong> {{car.carName}}</p>
+            <p><strong>Car Number:</strong> {{car.carNumber}}</p>
+            <p><strong>Car Passing :</strong>  {{car.carPassing}}</p>
+            <p><strong>Agency Name:</strong>  {{car.agencyName}}</p>
+            <p><strong>Purchase Year:</strong>  {{car.purchaseYear}}</p>
+            <p><strong>Seaters:</strong>  {{car.seaters}}</p>
+            <p><strong>AC Type:</strong>  {{car.acType}}</p>
+            <p><strong>Description:</strong> {{car.description}}</p>
+          </div>
+  
+          <div class="text-center">
+            <button class="btn see-more-btn text-white w-100" [routerLink]="['/booking', car.carId]">Book Car</button>
+
+          </div>
+        </div>
+        <!-- Single Car Card End -->
+  
+        <!-- Duplicate this block to add more cards -->
+      </div>
+    </div>
+  </div>
+  

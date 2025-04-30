@@ -1,35 +1,23 @@
-<!-- <p>user-index works!</p> -->
- <!-- <p>userindex works!</p> -->
- <!-- <p>dashbord works!</p> -->
-<div class="dashboard-container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <h3>Cab Types</h3>
-      <ul>
-        <li (click)="selectCategory('AC Cab')">AC Cab</li>
-        <li (click)="selectCategory('Non-AC Cab')">Non-AC Cab</li>
-        <li (click)="selectCategory('4-Seater')">4-Seater</li>
-        <li (click)="selectCategory('7-Seater SUV')">7-Seater SUV</li>
-        <li (click)="selectCategory('Luxury Sedan')">Luxury Sedan</li>
-        <li (click)="selectCategory('Tempo Traveller')">Tempo Traveller</li>
-      </ul>
-    </aside>
-  
-    <!-- Main Content -->
-    <main class="content">
-      <div *ngIf="selectedCab">
-        <h2>{{ selectedCab.name }}</h2>
-        <img [src]="selectedCab.image" alt="{{ selectedCab.name }}" />
-        <p>Type: {{ selectedCab.type }}</p>
-        <p>Seats: {{ selectedCab.seats }}</p>
-        <p>Rent: ₹{{ selectedCab.rent }}/km</p>
-       
-       <div class="btn">
-        <button class="book-now-btn btn btn-primary"  routerLink="/booking">Book Now</button> </div> 
+<div class="bg-car">
+  <div class="container py-5">
+    <h2 class="mb-4 text-center text-white-custom">Available Car Agencies</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+      <!-- Loop through each vendor -->
+      <div class="col" *ngFor="let vendor of infoData.vender">
+        <div class="card vendor-card">
+          <img src="https://5.imimg.com/data5/SELLER/Default/2021/3/PU/ST/FO/108632947/cab-services.png" class="vendor-img" alt="Agency Photo">
+          <div class="card-body text-white-custom">
+            <h5 class="card-title">{{ vendor.agencyName }}</h5>
+            <p class="card-text mb-1"><strong>Address:</strong> {{ vendor.address }}</p>
+            <p class="card-text mb-1"><strong>Contact:</strong> {{ vendor.phoneNumber }}</p>
+            <p class="card-text mb-2"><strong>Rating:</strong> <span class="rating">★★★★☆</span></p>
+            <button class="btn see-more-btn text-white w-100" [routerLink]="['/car-data', vendor.vendorId]">See More</button>
+
+          </div>
+        </div>
       </div>
 
-      <div *ngIf="!selectedCab">
-        <p>Please select a cab category to see details.</p>
-      </div>
-    </main>
-  </div>
+    </div>
+  </div>
+</div>

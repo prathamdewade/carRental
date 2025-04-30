@@ -25,5 +25,7 @@ export class UserApiService {
   
      this.router.navigate(["/auth"])
   }
-
+   getUserById(id:any){
+      return this.http.get('https://localhost:7049/api/User/' +id)
+   }
 }

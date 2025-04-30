@@ -9,19 +9,19 @@ import { VenderapiService } from 'src/app/venderapi.service';
 })
 export class EditCarComponent implements OnInit {
   carId: any;
-  car = {
-    "carName": "",
-    "carNumber": "",
-    "carPassing": "",
-    "agencyName": "",
-    "purchaseYear": "",
-    "seaters": "",
-    "acType": "",
-    "description": "",
-    "carImage": null as File | string | null,
-    "carImagePath": "",
-    "venderId": ""
-  }
+    car = {
+      "carName": "",
+      "carNumber": "",
+      "carPassing": "",
+      "agencyName": "",
+      "purchaseYear": "",
+      "seaters": "",
+      "acType": "",
+      "description": "",
+      "carImage": null as File | string | null,
+      "carImagePath": "",
+      "venderId": ""
+    }
 
 
   constructor(private route: ActivatedRoute,
@@ -71,7 +71,7 @@ export class EditCarComponent implements OnInit {
    console.log("vender id ", sessionStorage.getItem("id"));
    
     if (data.carImage && typeof data.carImage !== 'string') {
-      formData.append('carImage', data.carImage);
+        formData.append('carImage', data.carImage, data.carImage.name);
     }
 
     console.log('formData before sending:', formData);

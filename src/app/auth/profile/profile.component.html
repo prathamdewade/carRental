@@ -8,9 +8,9 @@
       <p class="text-center email mb-4">{{loggedInUser.email }}</p>
 
       <div class="mb-3">
-        <label class="form-label">Username</label>
+        <label class="form-label"> {{ role === 'vender' ? 'Owner Name' : 'Username' }}</label>
         <input type="text" class="form-control" 
-        value="{{loggedInUser.userName}}" disabled>
+        value="{{loggedInUser.userName || loggedInUser.ownerName}}" disabled>
       </div>
 
       <div class="mb-3">
@@ -20,7 +20,7 @@
 
       <div class="mb-4">
         <label class="form-label">Location</label>
-        <input type="text" class="form-control" value="{{loggedInUser.address}}" disabled>
+        <input type="text" class="form-control" value="{{loggedInUser.address }}" disabled>
       </div>
 
       <div class="d-grid">

@@ -37,12 +37,14 @@ export class RegistrationComponent {
 
     this.service.userRegister(this.user).subscribe({
       next: (res) => {
+        alert("User Registration successfully")
         console.log('Registered:', res);
         sessionStorage.setItem("userRole", "user");
         sessionStorage.setItem('loggedInUser', res);
         this.router.navigate(['/user-index']);
       },
       error: (err) => {
+        alert("Something went wrong while register data")
         console.error('Registration failed:', err);
         
         // Check if error has a JSON body
@@ -53,12 +55,13 @@ export class RegistrationComponent {
         }
       }
     });
-  }
+  } 
     
   onVenderRegister(){
     this.v_service.onRegister(this.vender).subscribe({
       next: (res) => {
-        console.log('Registered:', res);
+        alert("Vendor Registration successfully")
+        console.log('Registered:', res); 
         sessionStorage.setItem("userRole", "vender");
         sessionStorage.setItem('loggedInVender', res);
 
@@ -66,7 +69,7 @@ export class RegistrationComponent {
       },
       error: (err) => {
         console.error('Registration failed:', err);
-        
+        alert("Something went wrong while register data")
         // Check if error has a JSON body
         if (err.error && err.error.message) {
           alert(err.error.message); // Show the backend error
@@ -76,5 +79,7 @@ export class RegistrationComponent {
       }
     });
   }
+
+  
 
 }
